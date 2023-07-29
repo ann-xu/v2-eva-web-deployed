@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Meet your virtual closet">
+    <meta name="description" content="">
+    
+    <title>EVA</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+    <script src="./index.js"></script>
+
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+    <link rel="stylesheet" href="Home.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 5.12.7, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/logo.png" 
+}</script>
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="Home">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body class="u-body u-xl-mode" data-lang="en">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header" style="display:table">
+            <h5 class="modal-title" id="exampleModalLabel" style="display:table-cell;vertical-align:middle;">Sign In</h5>
+          </div>
+          <div class="modal-body" style="text-align:center;">
+            <p class="fs-6">COMING SOON!</p>
+            <p class="fs-6">Sewing buttons and hemming edges...</p>
+          </div>
+          <!-- <div class="modal-body" style="text-align:center;">
+            <div id="firebaseui-auth-container"></div>
+            <p class="fs-6">–––– OR ––––</p>
+            <form>
+              <div class="form-group" style="align-content:center;">
+                <label for="email-input" class="col-form-label">Login with email</label>
+                <input type="text" class="form-control" id="email-input" style="width: 200px; margin: auto; display: block; text-align:center;">
+              </div>
+              <button id="send-email" type="button" onclick="signInEmail()" class="btn btn-light get-started" style="width:200px">Send verification link</button>
+            </form>
+            
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <header class="u-clearfix u-header u-header" id="sec-0d85"><div class="u-clearfix u-sheet u-sheet-1">    
+      <a href="index.html" class="u-image u-logo u-image-1" data-image-width="758" data-image-height="222">
+          <img src="images/logo.png" class="u-logo-image u-logo-image-1">
+        </a>
+        <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-nav u-unstyled u-nav-1">
+              <li id="sign-in" class="u-nav-item">
+                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" onclick="getStarted()" data-bs-toggle="modal" data-bs-target="#exampleModal" data-whatever="@mdo" style="padding: 10px 20px;">Sign In</a>
+              </li>
+              <li id="my-closet" class="u-nav-item">
+                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="closet.html" style="padding: 10px 20px;">My Closet</a>
+              </li>
+              <li id="sign-out" class="u-nav-item">
+                <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="javascript:signOut()" style="padding: 10px 20px;">Sign Out</a>
+              </li>
+            </ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                  <li id="sign-in-collapse" class="u-nav-item">
+                    <a class="u-button-style u-nav-link" onclick="getStarted()" data-bs-toggle="modal" data-bs-target="#exampleModal" data-whatever="@mdo">Sign In</a>
+                  </li>
+                  <li id="my-closet-collapse" class="u-nav-item">
+                    <a class="u-button-style u-nav-link" href="closet.html">My Closet</a>
+                  </li>
+                  <li id="sign-out-collapse" class="u-nav-item">
+                    <a class="u-button-style u-nav-link" href="javascript:signOut()">Sign Out</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header>
+    <section class="u-clearfix u-valign-top-lg u-white u-section-1" id="carousel_1521">
+      <div class="u-custom-color-6 u-expanded-height-md u-shape u-shape-rectangle u-shape-1" data-animation-name="customAnimationIn" data-animation-duration="1500"></div>
+      <img class="u-hidden-sm u-hidden-xs u-image u-image-contain u-image-default u-image-1" src="images/line4.png" alt="" data-image-width="2884" data-image-height="703">
+      <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout">
+          <div class="u-layout-row">
+            <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-30 u-white u-layout-cell-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
+              <div class="u-container-layout u-container-layout-1">
+                <img class="u-image u-image-default u-preserve-proportions u-image-2" src="images/crop.webp" alt="" data-image-width="167" data-image-height="250">
+                <img class="u-image u-image-default u-preserve-proportions u-image-3" src="images/whitesneakers.webp" alt="" data-image-width="167" data-image-height="250">
+                <img class="u-image u-image-default u-preserve-proportions u-image-4" src="images/pants.webp" alt="" data-image-width="167" data-image-height="250">
+                <h6 class="u-custom-font u-font-montserrat u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">welcome</h6>
+                <h1 class="u-custom-font u-font-montserrat u-text u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750">Meet your AI closet</h1>
+                <p class="u-text u-text-3"> EVA organizes your clothes, provides styling suggestions, &amp; helps you shop more mindfully.<br>
+                  <br>Relax: let your virtual closet do the work for you.
+                </p>
+                <a onclick="getStarted()" class="u-active-palette-2-base u-black u-border-none u-btn u-button-style u-hover-palette-2-base u-btn-1" target="_blank" data-bs-toggle="modal" data-bs-target="#exampleModal" data-whatever="@mdo">Get started</a>
+              </div>
+            </div>
+            <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
+              <div class="u-container-layout u-container-layout-2">
+                <h6 class="u-text u-text-body-alt-color u-text-default u-text-4" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">72°<br>sunny<br>nyc
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h6 class="u-text u-text-5" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">images from bandier</h6>
+    </section>
+    <section class="u-align-center u-clearfix u-white u-section-2" id="carousel_3fcd">
+      <img class="u-expanded-width u-image u-image-default u-image-1" src="images/AdobeStock_245206685.jpg" data-image-width="5760" data-image-height="3840">
+      <h6 class="u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">EVA WARDROBE</h6>
+      <div style="padding:0px 30px">
+        <h2 class="u-text u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500">All things personal fashion, united by your closet.&nbsp;</h2>
+      </div>
+    </section>
+    <section class="u-clearfix u-custom-color-1 u-section-3" id="carousel_a940">
+      <div class="u-expanded-width u-shape u-shape-rectangle u-white u-shape-1"></div>
+      <div class="u-clearfix u-gutter-20 u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout">
+          <div class="u-layout-row">
+            <div class="u-size-20">
+              <div class="u-layout-col">
+                <div class="u-size-60">
+                  <div class="u-layout-row">
+                    <div class="u-align-center u-container-style u-layout-cell u-radius-5 u-shape-round u-size-60 u-white u-layout-cell-1" data-animation-name="customAnimationIn" data-animation-duration="1500">
+                      <div class="u-container-layout u-valign-bottom-sm u-valign-bottom-xs u-container-layout-1">
+                        <h5 class="u-custom-font u-font-montserrat u-text u-text-1">
+                          <span style="font-size: 0.875rem;">STEP 1</span>
+                          <br>
+                          <span style="font-size: 1.875rem; font-weight: 700;">shop</span>
+                        </h5>
+                        <div class="u-align-center u-image u-image-circle u-image-contain u-image-1" alt="" data-image-width="848" data-image-height="868"></div>
+                        <p class="u-text u-text-2"> Shop online or in-person (with your email) at a participating store.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-size-40">
+              <div class="u-layout-col">
+                <div class="u-size-60">
+                  <div class="u-layout-row">
+                    <div class="u-align-center u-container-style u-layout-cell u-shape-rectangle u-size-30 u-white u-layout-cell-2" data-animation-name="customAnimationIn" data-animation-duration="1500">
+                      <div class="u-container-layout u-valign-bottom-sm u-valign-bottom-xs u-container-layout-2">
+                        <h5 class="u-custom-font u-font-montserrat u-text u-text-3">
+                          <span style="font-size: 0.875rem;">STEP 2</span>
+                          <br>
+                          <span style="font-size: 1.875rem; font-weight: 700;">Connect</span>
+                        </h5>
+                        <div class="u-align-center u-image u-image-circle u-image-contain u-image-2" alt="" data-image-width="546" data-image-height="512"></div>
+                        <p class="u-text u-text-4"> Login to EVA via email to sync your purchases to your closet.</p>
+                      </div>
+                    </div>
+                    <div class="cell-temp-clone u-align-center u-container-style u-layout-cell u-shape-rectangle u-size-30 u-white u-layout-cell-3" data-animation-name="customAnimationIn" data-animation-duration="1500">
+                      <div class="u-container-layout u-valign-bottom-sm u-valign-bottom-xs u-container-layout-3">
+                        <h5 class="u-custom-font u-font-montserrat u-text u-text-5">
+                          <span style="font-size: 0.875rem;">STEP 3</span>
+                          <br>
+                          <span style="font-size: 1.875rem; font-weight: 700;">Style</span>
+                        </h5>
+                        <div class="u-align-center u-image u-image-circle u-image-contain u-image-3" alt="" data-image-width="1076" data-image-height="792"></div>
+                        <p class="u-text u-text-6"> Get outfit recommendations, personal styling, &amp; more!</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container-fluid bg-body-tertiary container-padding">
+      <div class="container text-center u-clearfix u-sheet u-sheet-1">
+          <p class="fs-1">Stay in Touch</p>
+          <p class="fs-6">
+              Leave your email to be notified of when we launch!
+          </p>
+          <div class="row">
+                  <form id="contact-form" name="contact-form">
+                      <div class="row">
+                          <div class="col-md-6" style="padding-top:20px">
+                              <div class="form-floating md-form mb-0">
+                                  <input type="text" id="name" name="name" class="form-control" style="border:none">
+                                  <label for="name" class="">Your name</label>
+                              </div>
+                          </div>
+                          <div class="col-md-6" style="padding-top:20px">
+                              <div class="form-floating md-form mb-0">
+                                  <input type="text" id="email" name="email" class="form-control" style="border:none">
+                                  <label for="email" class="">Your email</label>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row" style="padding-top:20px">
+                          <div class="col-md-12">
+                              <div class="form-floating md-form">
+                                  <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" style="border:none"></textarea>
+                                  <label for="message">Your message [Optional]</label>
+                              </div>
+
+                          </div>
+                      </div>
+                  </form>
+                  <div id = "submit-form-row" class="text-center text-md-left" style="padding: 20px 0px">
+                      <a class="u-active-palette-2-base u-black u-border-none u-btn u-button-style u-hover-palette-2-base u-btn" style="margin:auto;display:inline-block;margin:10px 10px;width:150px;" onclick="document.getElementById('contact-form').reset();">Reset</a>
+                      <a class="u-active-palette-2-base u-black u-border-none u-btn u-button-style u-hover-palette-2-base u-btn" id="form-submit" style="margin:auto;display:inline-block;margin:10px 10px;width:150px;" onclick="submitForm()">Submit</a>
+                  </div>
+                  <div class="status"></div>
+          </div>
+      </div>
+  </section>
+    
+  <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-f01c"><div class="u-clearfix u-sheet u-sheet-1">
+      <img class="u-image u-image-default u-image-1" src="images/logo_footer.png" alt="" data-image-width="1554" data-image-height="688">
+      <p class="u-align-right u-small-text u-text u-text-variant u-text-1">Eva Wardrobe. Coming soon in 2023.</p>
+    </div>
+  </footer>
+  
+</body></html>
